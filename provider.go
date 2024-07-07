@@ -68,16 +68,15 @@ type Provider struct {
 type waitForDeletePropagationOption int
 
 const (
-	sameAsWaitForPropagation waitForDeletePropagationOption = 0
-	alwaysWait               waitForDeletePropagationOption = 1
-	neverWait                waitForDeletePropagationOption = 2
+	AlwaysWaitForDeletePropagation waitForDeletePropagationOption = 1
+	NeverWaitForDeletePropagation  waitForDeletePropagationOption = 2
 )
 
 func (p *Provider) shouldWaitForDeletePropagation() bool {
 	switch p.WaitForDeletePropagation {
-	case alwaysWait:
+	case AlwaysWaitForDeletePropagation:
 		return true
-	case neverWait:
+	case NeverWaitForDeletePropagation:
 		return false
 	default:
 		return p.WaitForPropagation

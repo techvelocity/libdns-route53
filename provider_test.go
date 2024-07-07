@@ -32,7 +32,7 @@ func TestProvider_shouldWaitForDeletePropagation(t *testing.T) {
 			name: "opposite from WaitForPropagation - should wait",
 			fields: fields{
 				WaitForPropagation:       false,
-				WaitForDeletePropagation: alwaysWait,
+				WaitForDeletePropagation: AlwaysWaitForDeletePropagation,
 			},
 			want: true,
 		},
@@ -40,7 +40,7 @@ func TestProvider_shouldWaitForDeletePropagation(t *testing.T) {
 			name: "opposite from WaitForPropagation - should wait",
 			fields: fields{
 				WaitForPropagation:       true,
-				WaitForDeletePropagation: neverWait,
+				WaitForDeletePropagation: NeverWaitForDeletePropagation,
 			},
 			want: false,
 		},
